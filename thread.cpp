@@ -6,7 +6,7 @@
 using namespace std;  
 
 // Функция для вычисления факториала числа n
-unsigned long long calculateFactorial(int n) {
+unsigned long long Factorial(int n) {
     unsigned long long result = 1;
     for (int i = 1; i <= n; ++i) {
         result *= i;
@@ -24,7 +24,7 @@ void threadFactorial(int n, int counter) {
     for (int i = 0; i < counter; ++i) {
         // Создание потоков для вычисления факториала
         threads.emplace_back([i, n, &results]() {
-            results[i] = calculateFactorial(n);
+            results[i] = Factorial(n);
         });
     }
     
